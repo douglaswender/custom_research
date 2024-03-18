@@ -21,7 +21,7 @@ class AppMenuController {
         },
         {
           "title": "Pesquisa",
-          "route": "/research",
+          "route": "/research/",
           "index": 1,
         },
       ];

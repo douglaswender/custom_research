@@ -9,7 +9,7 @@ final class ResearchStateLoadingState extends ResearchState {}
 final class ResearchStateFailureState extends ResearchState {}
 
 final class ResearchStateSuccessState extends ResearchState {
-  final ResearchModel research;
+  final ResearchModel? research;
 
-  ResearchStateSuccessState({required this.research});
+  ResearchStateSuccessState({this.research});
 }

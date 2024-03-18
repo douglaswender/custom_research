@@ -27,7 +27,9 @@ class _ResearchPageState extends State<ResearchPage> {
   @override
   void initState() {
     super.initState();
-    controller.load(id: widget.id);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      controller.load(id: widget.id);
+    });
   }
 
   @override
@@ -45,6 +47,10 @@ class _ResearchPageState extends State<ResearchPage> {
                     final research =
                         (controller.state as ResearchStateSuccessState)
                             .research;
+
+                    if (research == null) {
+                      return Text('Opa, essa pesquisa não está disponível!');
+                    }
                     return Column(
                       children: [
                         Text(

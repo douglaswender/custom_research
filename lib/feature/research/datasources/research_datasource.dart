@@ -4,11 +4,15 @@ import 'package:custom_research/feature/research/model/research_model.dart';
 class ResearchDatasource {
   final collection = FirebaseFirestore.instance.collection('researchs');
 
-  Future<ResearchModel> loadResearch(String id) async {
-    return await collection.doc(id).get().then(
-          (value) => ResearchModel.fromMap(
-            value.data() ?? {},
-          ),
-        );
+  Future<ResearchModel?> loadResearch(String id) async {
+    try {
+      return await collection.doc(id).get().then(
+            (value) => ResearchModel.fromMap(
+              value.data() ?? {},
+            ),
+          );
+    } catch (e) {
+      return null;
+    }
   }
 }
