@@ -1,7 +1,8 @@
+import 'package:custom_research/core/constants/theme.dart';
 import 'package:custom_research/shared/widgets/app_scaffold_widget.dart';
+import 'package:custom_research/shared/widgets/button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:signals_flutter/signals_flutter.dart';
 
 import './home_controller.dart';
 
@@ -20,13 +21,32 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return AppScaffold(
-      child: Center(
-        child: Watch(
-          (_) {
-            return Text(
-              'Clicks: ${controller.count}',
-            );
-          },
+      body: SizedBox(
+        height: 250,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              'assets/icons/logo.png',
+              width: 200,
+            ),
+            SizedBox(
+              height: 32,
+            ),
+            const Text(
+              'Vamos iniciar a pesquisa!',
+              style: kTitleTextStyle,
+            ),
+            SizedBox(
+              height: 16,
+            ),
+            ButtonWidget(
+              text: 'Iniciar!',
+              onPressed: () => Modular.to
+                  .pushReplacementNamed('/research/MVUyoIpEEQFsCPKftk01'),
+            )
+          ],
         ),
       ),
     );

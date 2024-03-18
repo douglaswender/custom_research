@@ -7,8 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class AppScaffold extends StatefulWidget {
-  final Widget child;
-  const AppScaffold({super.key, required this.child});
+  final Widget body;
+  const AppScaffold({super.key, required this.body});
 
   @override
   State<AppScaffold> createState() => _AppScaffoldState();
@@ -39,17 +39,24 @@ class _AppScaffoldState extends State<AppScaffold> {
               HeaderWidget(),
               Expanded(
                 child: Container(
-                  padding: const EdgeInsets.all(kDefaultPadding),
-                  constraints: const BoxConstraints(maxWidth: kMaxWidth),
-                  child: widget.child,
+                  padding: const EdgeInsets.only(
+                    left: kDefaultPadding,
+                    right: kDefaultPadding,
+                  ),
+                  constraints: const BoxConstraints(
+                      maxWidth: kMaxWidth, maxHeight: kMaxHeight),
+                  child: widget.body,
                 ),
               ),
-              const Align(
-                  alignment: Alignment.centerRight,
-                  child: Padding(
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Text('Desenvolvido por Douglas Wender'),
-                  ))
+                  ),
+                ],
+              )
             ],
           ),
         ),

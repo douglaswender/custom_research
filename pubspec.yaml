@@ -13,6 +13,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_modular: ^6.3.2
+  google_fonts: ^6.2.0
   signals: ^4.5.1
   signals_flutter: ^4.5.1
 
