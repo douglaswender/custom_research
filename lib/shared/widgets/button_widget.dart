@@ -14,27 +14,32 @@ class ButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: isLoading ? null : onPressed,
-      style: ElevatedButton.styleFrom(
-        backgroundColor: kPrimaryColor, // Button color
-        textStyle: kButtonTextStyle, // Text color
-        padding: const EdgeInsets.symmetric(
-            horizontal: 16, vertical: 10), // Button padding
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20), // Button border radius
+    return SizedBox(
+      width: double.infinity,
+      child: ElevatedButton(
+        onPressed: isLoading ? null : onPressed,
+        style: ElevatedButton.styleFrom(
+          backgroundColor: kPrimaryColor, // Button color
+          textStyle: kButtonTextStyle, // Text color
+          padding: const EdgeInsets.symmetric(
+              horizontal: 16, vertical: 10), // Button padding
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20), // Button border radius
+          ),
         ),
-      ),
-      child: isLoading
-          ? const SizedBox(
-              width: 20,
-              height: 20,
-              child: CircularProgressIndicator(
-                strokeWidth: 2,
-                valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+        child: isLoading
+            ? const SizedBox(
+                width: 20,
+                height: 20,
+                child: CircularProgressIndicator(
+                  strokeWidth: 2,
+                ),
+              )
+            : Text(
+                text,
+                style: kButtonTextStyle,
               ),
-            )
-          : Text(text),
+      ),
     );
   }
 }

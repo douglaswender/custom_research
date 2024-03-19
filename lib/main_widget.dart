@@ -15,6 +15,8 @@ class MainWidget extends StatelessWidget {
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: TextButton.styleFrom(backgroundColor: kPrimaryColor),
       ),
+      indicatorColor: kPrimaryColor,
+      colorScheme: ColorScheme.fromSeed(seedColor: kPrimaryColor),
       textTheme: const TextTheme(
         bodyLarge: TextStyle(color: kBodyTextPrimaryColor),
         bodyMedium: TextStyle(color: kBodyTextPrimaryColor),
