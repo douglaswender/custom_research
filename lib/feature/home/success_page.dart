@@ -5,20 +5,14 @@ import 'package:custom_research/shared/widgets/button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
-import './home_controller.dart';
-
-class HomePage extends StatefulWidget {
-  const HomePage({
-    super.key,
-  });
+class SuccessPage extends StatefulWidget {
+  const SuccessPage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<SuccessPage> createState() => _SuccessPageState();
 }
 
-class _HomePageState extends State<HomePage> {
-  final controller = Modular.get<HomeController>();
-
+class _SuccessPageState extends State<SuccessPage> {
   @override
   Widget build(BuildContext context) {
     return AppScaffold(
@@ -37,17 +31,17 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(
               height: 32,
             ),
-            const Text(
-              'Vamos iniciar a pesquisa!',
-              style: kTitleTextStyle,
+            Text(
+              'Parabéns, sua resposta foi enviada com sucesso!',
+              style: kTitleTextStyle.copyWith(color: Colors.green),
+              textAlign: TextAlign.center,
             ),
             const SizedBox(
               height: 16,
             ),
             ButtonWidget(
-              text: 'Iniciar!',
-              onPressed: () => Modular.to
-                  .pushReplacementNamed('/research/MVUyoIpEEQFsCPKftk01'),
+              text: 'Ir para o início!',
+              onPressed: () => Modular.to.pushReplacementNamed('/'),
             )
           ],
         ),

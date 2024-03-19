@@ -45,7 +45,7 @@ class _ResearchPageState extends State<ResearchPage> {
               (_) {
                 final currentState = controller.state;
                 if (currentState is ResearchStateSubmitedState) {
-                  Modular.to.pushReplacementNamed('/');
+                  Modular.to.pushReplacementNamed('/success');
                 }
                 switch (currentState) {
                   case (ResearchStateSuccessState _ ||

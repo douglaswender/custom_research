@@ -172,7 +172,8 @@ class _QuestionAnswerWidgetState extends State<QuestionAnswerWidget> {
                                   ),
                                   onChanged: (value) {
                                     answer = answer.copyWith(
-                                        descriptiveAnswer: value);
+                                        descriptiveAnswer:
+                                            "${widget.question.otherText ?? 'Outro'} - $value");
                                     widget.onChange(answer);
                                   },
                                 ),
@@ -232,8 +233,8 @@ class _QuestionAnswerWidgetState extends State<QuestionAnswerWidget> {
                                   const TextStyle(color: kBodyTextPrimaryColor),
                             ),
                             onChanged: (value) {
-                              answer =
-                                  answer.copyWith(descriptiveAnswer: value);
+                              answer = answer.copyWith(
+                                  descriptiveAnswer: "$currentAnswer - $value");
                               widget.onChange(answer);
                             },
                           ),

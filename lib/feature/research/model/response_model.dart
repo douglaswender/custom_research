@@ -26,12 +26,9 @@ class ResponseModel {
   }
 
   Map<String, dynamic> toMap() {
-    final descriptiveListAnswers = descriptiveAnswer.indexed
-        .map((e) => '${responses[e.$1]} - ${e.$2}')
-        .toList();
     return {
       'question': question,
-      'descriptiveAnswer': descriptiveListAnswers,
+      'descriptiveAnswer': descriptiveAnswer,
       'responses': responses,
     };
   }
