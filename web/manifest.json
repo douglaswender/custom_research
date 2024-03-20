@@ -1,11 +1,11 @@
 {
-    "name": "custom_research",
-    "short_name": "custom_research",
+    "name": "Pesquisa Personalizada",
+    "short_name": "Pesquisa Personalizada",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Sua pesquisa personalizada aqui!",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

@@ -36,10 +36,11 @@ class AppMenuController {
 
   void setIndexByRoute(String route) {
     if (route != '/') {
-      route = route.replaceAll('/', '');
+      route = route.replaceFirst('/', '');
       route = '/$route';
     }
-    final item = menuItems.firstWhere((e) => e['route'] == route);
+    final item =
+        menuItems.firstWhere((e) => (e['route'] as String).contains(route));
     _selectedIndex.value = item['index'];
   }
 
