@@ -28,39 +28,61 @@ class _AppScaffoldState extends State<AppScaffold> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: menuController.scaffoldKey,
-      drawer: SideMenuWidget(),
-      backgroundColor: kDarkBlackColor,
-      body: CustomScrollView(slivers: [
-        SliverFillRemaining(
-          hasScrollBody: false,
-          child: Column(
-            children: [
-              HeaderWidget(),
-              Expanded(
-                child: Container(
-                  padding: const EdgeInsets.only(
-                    left: kDefaultPadding,
-                    right: kDefaultPadding,
-                  ),
-                  constraints: const BoxConstraints(
-                      maxWidth: kMaxWidth, maxHeight: kMaxHeight),
-                  child: widget.body,
-                ),
+        key: menuController.scaffoldKey,
+        drawer: SideMenuWidget(),
+        backgroundColor: kDarkBlackColor,
+        body: Column(
+          children: [
+            HeaderWidget(),
+            Expanded(
+              child: SingleChildScrollView(
+                child: widget.body,
               ),
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Text('Desenvolvido por Douglas Wender'),
-                  ),
-                ],
-              )
-            ],
-          ),
-        ),
-      ]),
-    );
+            ),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text('Desenvolvido por Douglas Wender'),
+                ),
+              ],
+            )
+          ],
+        )
+        // CustomScrollView(
+        //   slivers: [
+        //     SliverFill
+        //     SliverFillRemaining(
+        //       hasScrollBody: false,
+        //       child: Column(
+        //         children: [
+        //           HeaderWidget(),
+        //           Expanded(
+        //             child: Container(
+        //               padding: const EdgeInsets.only(
+        //                 left: kDefaultPadding,
+        //                 right: kDefaultPadding,
+        //               ),
+        //               constraints: const BoxConstraints(
+        //                   maxWidth: kMaxWidth, maxHeight: kMaxHeight),
+        //               child: widget.body,
+        //             ),
+        //           ),
+        //           const Row(
+        //             mainAxisAlignment: MainAxisAlignment.end,
+        //             children: [
+        //               Padding(
+        //                 padding: EdgeInsets.all(8.0),
+        //                 child: Text('Desenvolvido por Douglas Wender'),
+        //               ),
+        //             ],
+        //           )
+        //         ],
+        //       ),
+        //     ),
+        //   ],
+        // ),
+        );
   }
 }

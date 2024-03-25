@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:custom_research/core/extensions/list_response_ext.dart';
 import 'package:custom_research/feature/research/model/answer_model.dart';
 import 'package:custom_research/feature/research/model/research_model.dart';
 import 'package:custom_research/feature/research/model/response_model.dart';
@@ -7,8 +8,6 @@ class ResearchDatasource {
   final researchsCollection =
       FirebaseFirestore.instance.collection('researchs');
   final answersCollection = FirebaseFirestore.instance.collection('answers');
-  final statisticsCollection =
-      FirebaseFirestore.instance.collection('statistics');
 
   Future<ResearchModel?> loadResearch(String id) async {
     try {
@@ -56,6 +55,19 @@ class ResearchDatasource {
       return true;
     } catch (e) {
       return false;
+    }
+  }
+
+  Future<List<ResponseModel>> loadStatistics(String id) async {
+    try {
+      final response = await answersCollection.doc(id).get().then((value) =>
+          List.from(value.data()?['answers'])
+              .map((e) => ResponseModel.fromMap(e))
+              .toList());
+      print(response[0].responses.convertToChart());
+      return response;
+    } catch (e) {
+      return [];
     }
   }
 }

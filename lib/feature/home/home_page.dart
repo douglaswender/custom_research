@@ -22,35 +22,32 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return AppScaffold(
-      body: SizedBox(
-        height: 250,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            BouncingWidget(
-              child: Image.asset(
-                'assets/icons/logo.png',
-                width: 200,
-              ),
+      body: Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          BouncingWidget(
+            child: Image.asset(
+              'assets/icons/logo.png',
+              width: 200,
             ),
-            const SizedBox(
-              height: 32,
-            ),
-            const Text(
-              'Vamos iniciar a pesquisa!',
-              style: kTitleTextStyle,
-            ),
-            const SizedBox(
-              height: 16,
-            ),
-            ButtonWidget(
-              text: 'Iniciar!',
-              onPressed: () => Modular.to
-                  .pushReplacementNamed('/research/MVUyoIpEEQFsCPKftk01'),
-            )
-          ],
-        ),
+          ),
+          const SizedBox(
+            height: 32,
+          ),
+          const Text(
+            'Vamos iniciar a pesquisa!',
+            style: kTitleTextStyle,
+          ),
+          const SizedBox(
+            height: 16,
+          ),
+          ButtonWidget(
+            text: 'Iniciar!',
+            onPressed: () => Modular.to
+                .pushReplacementNamed('/research/MVUyoIpEEQFsCPKftk01'),
+          )
+        ],
       ),
     );
   }

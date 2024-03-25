@@ -1,7 +1,7 @@
 import 'package:custom_research/feature/research/model/answer_model.dart';
 import 'package:signals_flutter/signals_flutter.dart';
 
-import 'package:custom_research/feature/research/controller/research_state.dart';
+import 'package:custom_research/feature/research/controller/research/research_state.dart';
 import 'package:custom_research/feature/research/datasources/research_datasource.dart';
 
 class ResearchController {

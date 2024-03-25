@@ -1,5 +1,5 @@
 import 'package:custom_research/core/constants/theme.dart';
-import 'package:custom_research/feature/research/controller/research_state.dart';
+import 'package:custom_research/feature/research/controller/research/research_state.dart';
 import 'package:custom_research/feature/research/model/research_model.dart';
 import 'package:custom_research/shared/widgets/app_scaffold_widget.dart';
 import 'package:custom_research/shared/widgets/question_answers/form_widget.dart';
@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:signals_flutter/signals_flutter.dart';
 
-import 'controller/research_controller.dart';
+import 'controller/research/research_controller.dart';
 
 class ResearchPage extends StatefulWidget {
   final String id;
