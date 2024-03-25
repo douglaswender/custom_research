@@ -1,4 +1,3 @@
-import 'package:custom_research/core/constants/config.dart';
 import 'package:custom_research/core/constants/theme.dart';
 import 'package:custom_research/shared/controller/app_menu_controller.dart';
 import 'package:custom_research/shared/widgets/header_widget.dart';

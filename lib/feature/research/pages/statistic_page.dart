@@ -38,7 +38,6 @@ class _StatisticsPageState extends State<StatisticsPage> {
               final responses = currentState.responses;
 
               return SingleChildScrollView(
-                //physics: const NeverScrollableScrollPhysics(),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: responses
